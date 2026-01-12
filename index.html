@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Just For You ❤️</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body {
+  margin: 0;
+  height: 100vh;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #ff758c, #ff7eb3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.box {
+  background: rgba(0,0,0,0.35);
+  padding: 30px;
+  border-radius: 20px;
+  text-align: center;
+  max-width: 360px;
+  width: 90%;
+  box-shadow: 0 0 25px rgba(255,255,255,0.2);
+}
+
+.success {
+  color: #c8ffd4;
+  font-weight: bold;
+  margin-top: 10px;
+  animation: fadeIn 0.6s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.heart {
+  position: fixed;
+  font-size: 20px;
+  color: #ff4d6d;
+  animation: burst 1.5s ease-out forwards;
+  pointer-events: none;
+}
+
+@keyframes burst {
+  0% {
+    transform: scale(0) translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.8) translateY(-120px);
+    opacity: 0;
+  }
+}
+
+h1 {
+  margin-bottom: 10px;
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 25px;
+  border: none;
+  margin-top: 15px;
+  text-align: center;
+  font-size: 16px;
+  outline: none;
+}
+
+button {
+  margin-top: 15px;
+  padding: 10px 30px;
+  border-radius: 25px;
+  border: none;
+  background: white;
+  color: #ff4d6d;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+#error {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #ffdede;
+}
+
+.shake {
+  animation: shake 0.4s;
+}
+
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  50% { transform: translateX(5px); }
+  75% { transform: translateX(-5px); }
+  100% { transform: translateX(0); }
+}
+
+#countdown {
+  margin-top: 15px;
+  font-size: 15px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="box" id="box">
+  <h1>Only For You ❤️</h1>
+  <p>Answer this question</p>
+
+  <p><strong>Where did our story begin?</strong></p>
+
+  <input type="text" id="answer" placeholder="Your answer">
+  <button onclick="check()">Enter</button>
+
+  <div id="error"></div>
+  <div id="countdown"></div>
+</div>
+
+<script>
+  function heartBurst() {
+  for (let i = 0; i < 12; i++) {
+    const heart = document.createElement("div");
+    heart.className = "heart";
+    heart.innerHTML = "❤";
+
+    heart.style.left = Math.random() * window.innerWidth + "px";
+    heart.style.top = Math.random() * window.innerHeight + "px";
+
+    document.body.appendChild(heart);
+
+    setTimeout(() => heart.remove(), 1500);
+  }
+}
+const correctAnswer = "college";
+
+function check() {
+  const input = document.getElementById("answer");
+  const user = input.value.toLowerCase().trim();
+  const box = document.getElementById("box");
+  const error = document.getElementById("error");
+
+  if (user === correctAnswer) {
+    error.style.display = "block";
+    error.className = "success";
+    error.innerText = "Correct 💖 Opening our memories…";
+
+    //Play sound
+    document.getElementById("loveSound").play();
+
+    //heart burst
+    heartBurst();
+
+    // small delay before opening next page
+    setTimeout(() => {
+      window.location.href = "her.html";
+    }, 1500);
+
+  } else {
+    error.style.display = "block";
+    error.className = "";
+    error.innerText = "Wrong answer… try again bangaaru 💗";
+
+    box.classList.remove("shake");
+    void box.offsetWidth; // restart animation
+    box.classList.add("shake");
+  }
+}
+/* COUNTDOWN */
+const targetDate = new Date("March 5, 2026 00:00:00").getTime();
+
+setInterval(() => {
+  const now = new Date().getTime();
+  const diff = targetDate - now;
+
+  if (diff <= 0) {
+    document.getElementById("countdown").innerText =
+      "Happy Anniversary ❤️";
+    return;
+  }
+
+  const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+  const minutes = Math.floor((diff / (1000 * 60)) % 60);
+
+  document.getElementById("countdown").innerText =
+    `Our anniversary in ${days} days ${hours}h ${minutes}m 💕`;
+}, 1000);
+</script>
+<audio id="loveSound" preload="auto">
+  <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_1b2c5a2c7a.mp3" type="audio/mpeg">
+</audio>
+</body>
+</html>

@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<!-- saved from url=(0048)https://app.onecompiler.com/447bxxpnu_447h8tr78/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Year With You — Our 2025</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com/">
+  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+  <link href="./css2" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#fff7fb; /* soft pastel */
+      --card:#fff;
+      --accent:#f5a3d6; /* pink */
+      --muted:#8b8b9a;
+      --glass: rgba(255,255,255,0.6);
+      --radius:18px;
+      --shadow: 0 10px 30px rgba(15,15,30,0.08);
+    }
+    *{box-sizing:border-box}
+    body{font-family:Inter,system-ui,Segoe UI,Roboto,"Helvetica Neue",Arial; margin:0; background:linear-gradient(180deg,var(--bg),#fff); color:#222}
+    a{color:inherit}
+    header{position:fixed;left:0;right:0;top:0;display:flex;align-items:center;justify-content:space-between;padding:12px 18px;background:transparent;backdrop-filter: blur(6px);z-index:40}
+    .logo{display:flex;gap:10px;align-items:center}
+    .logo .heart{font-family:'Great Vibes';font-size:22px;color:var(--accent)}
+    nav{display:flex;gap:12px}
+    nav button{background:transparent;border:0;padding:6px 10px;border-radius:10px;font-weight:600}
+    main{padding:90px 18px 60px;max-width:980px;margin:0 auto}/* Hero */
+.hero{display:grid;grid-template-columns:1fr;gap:16px;align-items:center}
+.hero .card{background:var(--card);padding:20px;border-radius:var(--radius);box-shadow:var(--shadow)}
+.hero h1{font-family:'Great Vibes';font-size:38px;margin:4px 0}
+.hero p{margin:0;color:var(--muted)}
+.hero .photo{width:100%;height:260px;border-radius:14px;object-fit:cover;display:block}
+/* Floating heart style */
+.heart {
+  position: fixed;
+  font-size: 24px;
+  color: rgba(255, 105, 180, 0.7);
+  pointer-events: none; /* clicks pass through */
+  user-select: none;
+  z-index: 9999;
+  transition: transform 0.1s linear;
+}
+/* Timeline */
+.timeline{margin-top:20px}
+.month{display:flex;gap:12px;align-items:flex-start;padding:16px;background:linear-gradient(90deg,#ffffff, #fffdfa);border-radius:14px;margin-bottom:12px;box-shadow:var(--shadow)}
+.month img{width:120px;height:86px;object-fit:cover;border-radius:10px}
+.month .meta{flex:1}
+.month h3{margin:0 0 6px 0}
+.month p{margin:0;color:var(--muted)}
+.month .date{font-weight:700;color:var(--accent)}
+
+/* Gallery */
+.gallery-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:12px}
+.polaroid{background:var(--card);padding:8px;border-radius:12px;box-shadow:var(--shadow);display:block}
+.polaroid img{width:100%;height:160px;object-fit:cover;border-radius:8px}
+
+/* Letters */
+.letter{background:linear-gradient(180deg,#fff, #fffaf6);padding:16px;border-radius:14px;box-shadow:var(--shadow);margin-top:12px}
+.letter h3{font-family:'Great Vibes';font-size:22px;margin:0 0 8px}
+
+/* Footer */
+footer{margin-top:28px;text-align:center;color:var(--muted);font-size:14px}
+
+/* Player */
+.player{display:flex;gap:8px;align-items:center;padding:8px 12px;border-radius:12px;background:var(--glass);backdrop-filter: blur(4px)}
+
+/* Responsive */
+@media(min-width:760px){
+  .hero{grid-template-columns:1fr 360px}
+  .gallery-grid{grid-template-columns:repeat(3,1fr)}
+  .month img{width:200px;height:120px}
+}
+
+/* small helpers */
+.btn{display:inline-block;padding:10px 14px;border-radius:12px;background:var(--accent);color:white;font-weight:700;border:0}
+.muted{color:var(--muted)}
+
+/* secret modal */
+.modal{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(10,10,20,0.45);opacity:0;pointer-events:none;transition:all .24s}
+.modal.open{opacity:1;pointer-events:auto}
+.modal .panel{background:var(--card);padding:20px;border-radius:16px;max-width:520px;box-shadow:var(--shadow)}
+
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo"><span class="heart">♡</span><div>
+      <div style="font-weight:700">A Year With You My Love</div>
+      <div style="font-size:12px;color:var(--muted)">Jan — Dec • Our 2025</div>
+    </div></div>
+    <nav>
+      <button data-scroll="home">Home</button>
+      <button data-scroll="timeline">Timeline</button>
+      <button data-scroll="gallery">Gallery</button>
+      <button data-scroll="letters">Letters</button>
+      <button data-scroll="future">Future</button>
+    </nav>
+  </header>  <main>
+    <!-- HERO -->
+    <section id="home" class="hero">
+      <div class="card">
+        <h1>You made my year Hanseena🤍🥹</h1>
+        <p>I met you in November and every month since has been a new page of the sweetest story. This is our memory book — photos, messages, little promises, and the songs that remind me of you.</p>
+        <div style="height:12px"></div>
+        <div class="player">
+          <span id="playBtn" style="cursor:pointer">▶︎ Play song</span>
+          <div style="flex:1"></div>
+          <button class="btn" id="openSecret">Open surprise</button>
+        </div>
+      </div><aside class="card" style="text-align:center">
+    <!-- Replace src with your favourite photo -->
+    <img id="heroPhoto" class="photo" src="./photo-1503264116251-35a269479413" alt="you &amp; me">
+    <div style="margin-top:10px;font-size:14px;color:var(--muted)">January 2025 — the day we met</div>
+  </aside>
+</section>
+
+<!-- TIMELINE -->
+<section id="timeline" class="timeline">
+  <h2 style="font-family:&#39;Great Vibes&#39;;font-size:28px;margin-bottom:6px">Our Timeline</h2>
+  <p class="muted">A memory for every month.</p>
+
+  <!-- months: update text and image URLs below -->
+  <div class="month" data-month="January">
+    <img src="https://res.cloudinary.com/dye8fjsab/image/upload/v1768201744/0a8bbe99-2d3b-48b8-86d3-923df0b63a91_zdjmif.jpg" alt="jan">
+    <div class="meta">
+      <div class="date">January</div>
+      <h3>When I first met you</h3>
+      <p>Still i met you on November but you got to know me on this month, That first chat on January 26, that laugh — I dont know how but from that moment  you became my favourite person.And that walk towards me i was totally surprised and shivering .And i was stucked in your beauty.</p>
+    </div>
+  </div>
+
+  <div class="month" data-month="February">
+    <img src="https://res.cloudinary.com/dye8fjsab/image/upload/v1768201805/df4d57e6-cee5-4de5-a9be-dac8d7e08e63_n1hn7y.jpg" alt="feb">
+    <div class="meta">
+      <div class="date">February</div>
+      <h3>Little dates and long talks</h3>
+      <p>Our conversations got deeper, and every little memory began to feel important.And the day we went to a date on Kamath Bakery Where we began our journey together.And most beautiful day that is your birthday where i found most beautiful person ever.</p>
+    </div>
+  </div>
+
+  <!-- Add more month blocks; copy-paste and change content -->
+  <div class="month" data-month="March">
+    <img src="https://res.cloudinary.com/dye8fjsab/image/upload/v1768201772/c40573a8-184f-48be-bf9d-74af857d4c64_edd6ab.jpg" alt="mar">
+    <div class="meta">
+      <div class="date">March</div>
+      <h3>First memory I can't forget</h3>
+      <p>The day which i never expected and i feared of on your reaction but surprisingly!! You proposed me on March 5 12:32AM the night that changed me totally.We explored places, laughed at silly things, and I started to realize you mattered more than I expected.</p>
+    </div>
+  </div>
+
+  <!-- For brevity, include month templates for Apr — Dec -->
+  <div class="month" data-month="April">
+    <img src="https://res.cloudinary.com/dye8fjsab/image/upload/v1768201754/aff7755a-48db-4b0d-8482-22a0fbbcde71_pi2p9l.jpg" alt="apr">
+    <div class="meta"><div class="date">April</div><h3>Small adventures</h3><p>This month was my day but we couldnt meet because of distances where we became sad on end of  CA classes, because it was only the key to our meetup where everyone come to study but you only used CA classes for me.We missed a lot in this month.</p></div>
+  </div>
+
+  <div class="month" data-month="May">
+    <img src="https://res.cloudinary.com/dye8fjsab/image/upload/v1768201784/fdddd015-a5b4-46be-a070-6c09e35574ae_jiqkkt.jpg" alt="may">
+    <div class="meta"><div class="date">May</div><h3>Become Harder</h3><p>The month came where we started to suffer a lot , no meetup,waiting for texts and snaps,but the late night chats were beautiful where both wait till night to chat with full peace and silent only 2 of us enjoying every moment.And the only month we spoke in a call of 10 minutes.</p></div>
+  </div>
+
+  <div class="month" data-month="June">
+    <img src="https://res.cloudinary.com/dye8fjsab/image/upload/v1768201730/a276da96-3e75-4cc9-9b3c-db03554a8104_ktxdrs.jpg" alt="jun">
+    <div class="meta"><div class="date">June</div><h3>Little promises</h3><p>Where we really started to suffer a lot you lost your mobile and daily chatting stopped.Where we started to miss each other and understanded each other values.Where we started fall on love each other .And the trust with each other and promises made us to stay together.</p></div>
+  </div>
+
+  <div class="month" data-month="July">
+    <img src="https://res.cloudinary.com/dye8fjsab/image/upload/v1768201765/670cfb18-0686-4af5-a94d-26616e3ac490_fff52s.jpg" alt="jul">
+    <div class="meta"><div class="date">July</div><h3>Life of Hope</h3><p>From this month there is only hope we are not sure about texting still we managed to stay togther even it is hardful  but CA class helped a lot to meet on sunday and travel together in bus .The travel with feel like butterflies flying around me.Most beautiful moment.</p></div>
+  </div>
+
+  <div class="month" data-month="August">
+    <img src="https://res.cloudinary.com/dye8fjsab/image/upload/v1768202640/c3062329-0d57-408e-a276-b20222c137da_jzbfif.jpg" alt="aug">
+    <div class="meta"><div class="date">August</div><h3>Moving harder</h3><p>month by month it was getting more harder to communicate but our trust with each other is the key to succes. Where you risking your life and chatting me late night where i hopefully waiting for you everyday.</p></div>
+  </div>
+
+  <div class="month" data-month="September">
+    <img src="https://res.cloudinary.com/dye8fjsab/image/upload/v1768201841/OIP_cbckv7.jpg" alt="sep">
+    <div class="meta"><div class="date">September</div><h3>Quiet mornings</h3><p>College started for me where i totally lost my sleep cant manage anything cant wait for your text beacause of tiredness still we managed together.Where day begins with quite hope and end with tears.</p></div>
+  </div>
+
+  <div class="month" data-month="October">
+    <img src="https://res.cloudinary.com/dye8fjsab/image/upload/v1768201808/ee503310-f219-4985-9fdb-2d3683a6a221_wgxu0g.jpg" alt="oct">
+    <div class="meta"><div class="date">October</div><h3>Crazy moments</h3><p>We went on date on october 11 it was hard to convience you but anyhow i managed and we enjoyed that day but we missed so many things because of fear .But it was beautiful and we talked so many things and we were happy after a long time and enjoyed that.</p></div>
+  </div>
+
+  <div class="month" data-month="November">
+    <img src="https://res.cloudinary.com/dye8fjsab/image/upload/v1768202296/1c2e6532-7dd4-4586-b545-6af7bb38af0c_n2yity.jpg" alt="nov">
+    <div class="meta"><div class="date">November</div><h3>Nothing left</h3><p>Everything we shared nothing to left the possessiveness we both showing was beautiful and i enjoyed a lot.Even we get text weekly once my day begin with hope and seeing your beautifull pictures and ending with tears in your face on my mobile and kissing your cheek and missing you a lot.</p></div>
+  </div>
+
+  <div class="month" data-month="December">
+    <img src="https://res.cloudinary.com/dye8fjsab/image/upload/v1768202076/7ec1f76b-2bc3-40e7-9234-c6801ec00f3d_goqz9b.jpg" alt="dec">
+    <div class="meta"><div class="date">December</div><h3>End of year — grateful</h3><p>You're the person who made my 2025 beautiful.I hope our journy move forward with hope and joyful . And i pray Allah to make us forever together I love youuu my Bangaruuuuuu Hanseenaa🥹🤍</p></div>
+  </div>
+
+</section>
+
+<!-- GALLERY -->
+<section id="gallery">
+  <h2 style="font-family:&#39;Great Vibes&#39;;font-size:28px;margin-bottom:6px">Gallery</h2>
+  <p class="muted">A few favourite moments.</p>
+  <div class="gallery-grid">
+    <a class="polaroid" href="https://app.onecompiler.com/447bxxpnu_447h8tr78/#" data-full="https://res.cloudinary.com/dye8fjsab/image/upload/v1768204079/81b267a2-0119-4984-9821-9eb57ca0fc1d_rp4cox.jpg?q=80&amp;w=1600&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.0.3&amp;s=placeholder"><img src="https://res.cloudinary.com/dye8fjsab/image/upload/v1768204079/81b267a2-0119-4984-9821-9eb57ca0fc1d_rp4cox.jpg" alt="g1"></a>
+    <a class="polaroid" href="https://app.onecompiler.com/447bxxpnu_447h8tr78/#" data-full="https://res.cloudinary.com/dye8fjsab/image/upload/v1768204073/351939f5-ad0d-4616-b166-bea95033e656_zbnbkn.jpg?q=80&amp;w=1600&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.0.3&amp;s=placeholder"><img src="https://res.cloudinary.com/dye8fjsab/image/upload/v1768204073/351939f5-ad0d-4616-b166-bea95033e656_zbnbkn.jpg" alt="g2"></a>
+    <a class="polaroid" href="https://app.onecompiler.com/447bxxpnu_447h8tr78/#" data-full="https://res.cloudinary.com/dye8fjsab/image/upload/v1768204086/a81c7c9e-5418-4685-b08c-cbd1c48e8b90_dnhzpx.jpg?q=80&amp;w=1600&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.0.3&amp;s=placeholder"><img src="https://res.cloudinary.com/dye8fjsab/image/upload/v1768204086/a81c7c9e-5418-4685-b08c-cbd1c48e8b90_dnhzpx.jpg" alt="g3"></a>
+    <a class="polaroid" href="https://app.onecompiler.com/447bxxpnu_447h8tr78/#" data-full="https://res.cloudinary.com/dye8fjsab/image/upload/v1768204062/45cbe25a-d373-4314-8f7a-ab44407e92bd_ehhmp6.jpg?q=80&amp;w=1600&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.0.3&amp;s=placeholder"><img src="https://res.cloudinary.com/dye8fjsab/image/upload/v1768204062/45cbe25a-d373-4314-8f7a-ab44407e92bd_ehhmp6.jpg" alt="g4"></a>
+    <a class="polaroid" href="https://app.onecompiler.com/447bxxpnu_447h8tr78/#" data-full="https://res.cloudinary.com/dye8fjsab/image/upload/v1768204030/b24a5399-6449-40d6-85f6-a9c0943ff37f_wu4c88.jpg?q=80&amp;w=1600&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.0.3&amp;s=placeholder"><img src="https://res.cloudinary.com/dye8fjsab/image/upload/v1768204030/b24a5399-6449-40d6-85f6-a9c0943ff37f_wu4c88.jpg" alt="g5"></a>
+    <a class="polaroid" href="https://app.onecompiler.com/447bxxpnu_447h8tr78/#" data-full="https://res.cloudinary.com/dye8fjsab/image/upload/v1768204200/69a5f857-ebf9-421d-8a24-d1e978830abc_wpwev4.jpg?q=80&amp;w=1600&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.0.3&amp;s=placeholder"><img src="https://res.cloudinary.com/dye8fjsab/image/upload/v1768204200/69a5f857-ebf9-421d-8a24-d1e978830abc_wpwev4.jpg" alt="g6"></a>
+    <a class="polaroid" href="https://app.onecompiler.com/447bxxpnu_447h8tr78/#" data-full="https://res.cloudinary.com/dye8fjsab/image/upload/v1768204220/ac60c0be-d0be-46b8-8278-11c4ea6435eb_hmiqpe.jpg?q=80&amp;w=1600&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.0.3&amp;s=placeholder"><img src="https://res.cloudinary.com/dye8fjsab/image/upload/v1768204220/ac60c0be-d0be-46b8-8278-11c4ea6435eb_hmiqpe.jpg" alt="g7"></a>
+    <a class="polaroid" href="https://app.onecompiler.com/447bxxpnu_447h8tr78/#" data-full="https://res.cloudinary.com/dye8fjsab/image/upload/v1768204464/e6160d3d-0d43-4bcb-acaf-f3ef839b708d_akjakt.jpg?q=80&amp;w=1600&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.0.3&amp;s=placeholder"><img src="https://res.cloudinary.com/dye8fjsab/image/upload/v1768204464/e6160d3d-0d43-4bcb-acaf-f3ef839b708d_akjakt.jpg" alt="g8"></a>
+    <a class="polaroid" href="https://app.onecompiler.com/447bxxpnu_447h8tr78/#" data-full="https://res.cloudinary.com/dye8fjsab/image/upload/v1768204209/e83c2006-b2fe-4d65-8c64-5b9677cdc0a1_kmopjl.jpg?q=80&amp;w=1600&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.0.3&amp;s=placeholder"><img src="https://res.cloudinary.com/dye8fjsab/image/upload/v1768204209/e83c2006-b2fe-4d65-8c64-5b9677cdc0a1_kmopjl.jpg" alt="g9"></a>  
+    <a class="polaroid" href="https://app.onecompiler.com/447bxxpnu_447h8tr78/#" data-full="https://res.cloudinary.com/dye8fjsab/image/upload/v1768204118/2bcd6267-c52a-470d-bc8e-17f26d5f6c6a_bcu8u2.jpg?q=80&amp;w=1600&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.0.3&amp;s=placeholder"><img src="https://res.cloudinary.com/dye8fjsab/image/upload/v1768204118/2bcd6267-c52a-470d-bc8e-17f26d5f6c6a_bcu8u2.jpg" alt="g10"></a>
+    <a class="polaroid" href="https://app.onecompiler.com/447bxxpnu_447h8tr78/#" data-full="https://res.cloudinary.com/dye8fjsab/image/upload/v1768204108/7e2f582e-44f6-4c8b-92ee-41938d003e38_kcqhta.jpg?q=80&amp;w=1600&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.0.3&amp;s=placeholder"><img src="https://res.cloudinary.com/dye8fjsab/image/upload/v1768204108/7e2f582e-44f6-4c8b-92ee-41938d003e38_kcqhta.jpg" alt="g11"></a>
+    <a class="polaroid" href="https://app.onecompiler.com/447bxxpnu_447h8tr78/#" data-full="https://res.cloudinary.com/dye8fjsab/image/upload/v1768204223/51d9fc39-9f00-4f65-92d4-b9e226e0d595_zcxs5b.jpg?q=80&amp;w=1600&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.0.3&amp;s=placeholder"><img src="https://res.cloudinary.com/dye8fjsab/image/upload/v1768204223/51d9fc39-9f00-4f65-92d4-b9e226e0d595_zcxs5b.jpg" alt="g12"></a>
+  </div>
+</section>
+
+<!-- LETTERS -->
+<section id="letters">
+  <h2 style="font-family:&#39;Great Vibes&#39;;font-size:28px;margin-bottom:6px">Letters</h2>
+  <div class="letter">
+    <h3>What I felt when I met you</h3>
+    <p>That first day I didn't know that meeting you would change my whole year. You bring calm to my chaos and colour to my routine.I met you on Novemberand keep trying to reach you but nothing worked but hope ,destiny change still i lost my hope unexpectedly you came near me where we started journey on January 26 it was republic day for everyone but my life begins there .My body was shivering while seeing your beauty.</p>
+  </div>
+
+  <div class="letter">
+    <h3>Things I love about you</h3>
+    <ul class="muted">
+      <li>Your laugh that makes everything lighter.</li>
+      <li>How you listen.</li>
+      <li>Your fearless kindness.</li>
+      <li>Your loyality.</li>
+      <li>You risking your life for me.</li>
+     <li>your love for me and the way you see me.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- FUTURE -->
+<section id="future">
+  <h2 style="font-family:&#39;Great Vibes&#39;;font-size:28px;margin-bottom:6px">For Our Future</h2>
+  <div class="letter">
+    <h3>Hopes &amp; promises</h3>
+    <p>I want more small mornings, more silly fights that end in laughter, and a trip to a place we've never been. Promise I'll be there, always.</p>
+    <div style="margin-top:8px"><button class="btn" id="downloadBtn">Download this page as a keepsake</button></div>
+  </div>
+</section>
+
+<footer>
+  <div>Made with ❤️ — Your Hashim</div>
+  <div style="font-size:12px;color:var(--muted)">Love You Hanseeenaa and Miss you a Lot.</div>
+</footer>
+
+  </main>  <!-- Modal for full-image preview + secret -->  <div id="modal" class="modal" aria-hidden="true">
+    <div class="panel" id="modalPanel"></div>
+  </div>  <script>
+    // Smooth scroll nav
+    document.querySelectorAll('[data-scroll]').forEach(btn=>{
+      btn.addEventListener('click', ()=>{
+        const id = btn.getAttribute('data-scroll');
+        document.getElementById(id).scrollIntoView({behavior:'smooth',block:'start'});
+      });
+    });
+
+    // Play / pause a background song (replace src below with your mp3 URL or file path)
+    const audio = new Audio('https://files.catbox.moe/jeumd8.mp3'); // <-- add your song URL here (or leave blank)
+    let playing=false; const playBtn = document.getElementById('playBtn');
+    playBtn.addEventListener('click', ()=>{
+      if(!audio.src){ alert('No song linked. Open the HTML and put a song URL in the audio variable inside the code.'); return }
+      if(!playing){ audio.play(); playBtn.textContent='⏸︎ Pause'; playing=true } else { audio.pause(); playBtn.textContent='▶︎ Play song'; playing=false }
+    });
+
+    // Number of hearts on screen at a time
+const HEART_COUNT = 7;
+
+// Store hearts
+let hearts = [];
+
+// Create hearts
+for (let i = 0; i < HEART_COUNT; i++) {
+  const heart = document.createElement('div');
+  heart.className = 'heart';
+  heart.innerText = '❤️';
+  heart.style.left = Math.random() * window.innerWidth + 'px';
+  heart.style.top = window.innerHeight + Math.random() * 100 + 'px';
+  heart.speed = 0.1 + Math.random() * 0.3; // slow speed
+  heart.style.fontSize = (18 + Math.random() * 12) + 'px'; // random size
+  document.body.appendChild(heart);
+  hearts.push(heart);
+}
+
+// Animate hearts on scroll
+window.addEventListener('scroll', () => {
+  hearts.forEach(heart => {
+    const scrollY = window.scrollY;
+    const newTop = parseFloat(heart.style.top) - heart.speed * (scrollY * 0.02);
+    heart.style.top = newTop + 'px';
+
+    // Reset if heart goes off top
+    if (newTop < -50) {
+      heart.style.top = window.innerHeight + Math.random() * 100 + 'px';
+      heart.style.left = Math.random() * window.innerWidth + 'px';
+      heart.speed = 0.2 + Math.random() * 0.3;
+      heart.style.fontSize = (18 + Math.random() * 12) + 'px';
+    }
+  });
+});
+
+    // Gallery preview
+    document.querySelectorAll('.polaroid').forEach(a=>{
+      a.addEventListener('click', (e)=>{
+        e.preventDefault(); const url = a.getAttribute('data-full') || a.querySelector('img').src;
+        openModal('<img src="'+url+'" style="width:100%;border-radius:10px">');
+      });
+    });
+
+    // Month click to open details (example)
+    document.querySelectorAll('.month').forEach(m=>{
+      m.addEventListener('click', ()=>{
+        const month = m.getAttribute('data-month');
+        openModal('<h2 style="font-family:Great Vibes">'+month+'</h2><p>'+m.querySelector('.meta p').innerText+'</p>');
+      });
+    });
+
+    // Modal helpers
+    const modal = document.getElementById('modal'); const modalPanel = document.getElementById('modalPanel');
+    function openModal(html){ modalPanel.innerHTML = html + '<div style="margin-top:12px;text-align:right"><button class="btn" id="closeModal">Close</button></div>';
+      modal.classList.add('open'); document.getElementById('closeModal').addEventListener('click', closeModal);
+    }
+    function closeModal(){ modal.classList.remove('open'); }
+    modal.addEventListener('click', (e)=>{ if(e.target===modal) closeModal(); });
+
+    // Secret surprise button opens a hidden message (customise message below)
+    document.getElementById('openSecret').addEventListener('click', ()=>{
+      openModal('<h2 style="font-family:Great Vibes">A little secret</h2><p>Thank you for making my life brighter this year. I hope next year we fill even more pages together — starting with you and me, always.</p>');
+    });
+
+    // Download 'future' section as text file (simple keepsake)
+    document.getElementById('downloadBtn').addEventListener('click', ()=>{
+      const text = document.getElementById('future').innerText;
+      const blob = new Blob([text], {type: 'text/plain'});
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a'); a.href = url; a.download = 'Our-Future.txt'; document.body.appendChild(a); a.click(); a.remove(); URL.revokeObjectURL(url);
+    });
+
+    // Small accessibility: focus outline when tabbing
+    document.addEventListener('keydown', (e)=>{ if(e.key==='Tab') document.body.classList.add('show-focus'); });
+  </script><script defer="" src="./vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon="{&quot;version&quot;:&quot;2024.11.0&quot;,&quot;token&quot;:&quot;b6c6421bde3c48e5ac7f9b8dbecc7bd7&quot;,&quot;r&quot;:1,&quot;server_timing&quot;:{&quot;name&quot;:{&quot;cfCacheStatus&quot;:true,&quot;cfEdge&quot;:true,&quot;cfExtPri&quot;:true,&quot;cfL4&quot;:true,&quot;cfOrigin&quot;:true,&quot;cfSpeedBrain&quot;:true},&quot;location_startswith&quot;:null}}" crossorigin="anonymous"></script>
+
+</body></html>
